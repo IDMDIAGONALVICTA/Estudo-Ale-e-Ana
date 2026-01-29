@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<!-- saved from url=(0090)file:///C:/Users/dimasrocha/Downloads/relatorio_times_resumo_expandido_quadro_decisao.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Relatório – Times (2025 x 2026) | VGV e Comissão</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background-color: #f7f9fc; }
+    h1, h2, h3 { color: #2c3e50; }
+    .container { max-width: 1500px; margin: auto; }
+    .card { background: white; padding: 20px; margin-bottom: 22px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: right; white-space: nowrap; }
+    th { background-color: #34495e; color: white; text-align: center; }
+    td:first-child, th:first-child { text-align: center; }
+    .muted { color:#6b7280; font-size: 12px; margin-top: 6px; line-height: 1.4; }
+    .kpi p { margin: 6px 0; }
+    .highlight { font-weight: bold; color: #27ae60; }
+    .negative { font-weight: bold; color: #c0392b; }
+    .control-row { display:flex; align-items:center; gap:10px; flex-wrap: wrap; margin: 6px 0; }
+    .control-row label { font-weight: bold; }
+    .control-row input {
+      width: 160px; padding: 6px 10px; border: 1px solid #d0d7de; border-radius: 10px;
+      font-size: 14px; text-align: right;
+    }
+    .row-bonus td { background:#fafbfc; font-weight:bold; }
+    .subhead { background:#22313f; color:#fff; }
+    .subhead th { background:#22313f; }
+  
+    .badge { display:inline-block; padding: 4px 10px; border-radius: 999px; font-weight: bold; font-size: 12px; }
+    .badge.ok { background:#e8f7ee; color:#1f7a3b; }
+    .badge.bad { background:#fdecec; color:#a32020; }
+    .badge.neutral { background:#eef2ff; color:#2b3a8a; }
+    .decision-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .decision-item { border:1px solid #e5e7eb; border-radius: 12px; padding: 14px; background:#ffffff; }
+    .decision-item h4 { margin:0 0 8px 0; color:#22313f; }
+    .decision-item p { margin:6px 0; }
+    .gain-big { font-size: 18px; font-weight: 800; }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Relatório – VGV e Comissão por Time (2025 x 2026)</h1>
+
+  <div class="card">
+    <h2>Resumo Geral</h2>
+    <div class="grid">
+      <div class="kpi">
+        <p><strong>VGV Total 2025 (Geral):</strong> <span id="k_vgv25_total">R$&nbsp;380.111.794,00</span></p>
+        <p><strong>Média mensal VGV 2025:</strong> <span id="k_vgv25_avg">R$&nbsp;31.675.982,83</span></p>
+      </div>
+      <div class="kpi">
+        <p><strong>VGV Total 2026 (Geral):</strong> <span id="k_vgv26_total">R$&nbsp;450.294.455,00</span></p>
+        <p><strong>Média mensal VGV 2026:</strong> <span id="k_vgv26_avg">R$&nbsp;37.524.537,92</span></p>
+      </div>
+      <div class="kpi">
+        <p><strong>Crescimento VGV (2026 vs 2025):</strong> <span id="k_vgv_growth">R$&nbsp;70.182.661,00 (18,46%)</span></p>
+        <div class="muted">Ajuste o <strong>Share 2026</strong> no Time Ana Lucia: o Share do Time Alessandra será <strong>100% − Share Ana</strong> automaticamente.</div>
+      <div class="kpi">
+        <p><strong>Comissão (Média Mensal) – 2025:</strong></p>
+        <p>Ana Lucia: <span id="k_comm25_avg_ana">R$&nbsp;48.734,42</span></p>
+        <p>Alessandra: <span id="k_comm25_avg_ale">R$&nbsp;38.117,08</span></p>
+        <p><strong>Comissão (Média Mensal) – 2026:</strong></p>
+        <p>Ana Lucia: <span id="k_comm26_avg_ana">R$&nbsp;50.920,80</span></p>
+        <p>Alessandra: <span id="k_comm26_avg_ale">R$&nbsp;42.890,55</span></p>
+      </div>
+
+      <div class="kpi">
+        <p><strong>VGV (Média Mensal) – 2025:</strong></p>
+        <p>Ana Lucia: <span id="k_vgv25_avg_ana">R$&nbsp;17.264.517,67</span></p>
+        <p>Alessandra: <span id="k_vgv25_avg_ale">R$&nbsp;13.443.802,67</span></p>
+        <p><strong>VGV (Média Mensal) – 2026 (calculado):</strong></p>
+        <p>Ana Lucia: <span id="k_vgv26_avg_ana">R$&nbsp;20.368.319,18</span></p>
+        <p>Alessandra: <span id="k_vgv26_avg_ale">R$&nbsp;17.156.218,74</span></p>
+        <div class="muted">Em 2026, o VGV por time é calculado pelo Share (Ana) e (100% − Ana) para Alessandra.</div>
+      </div>
+
+      <div class="kpi">
+        <p><strong>Ganho Real (Comissão)</strong></p>
+        <p class="muted">2026 − 2025 (já considerando bonificação 2025)</p>
+        <p>Ana Lucia: <span id="k_gain_ana_big" class="gain-big highlight">R$&nbsp;26.236,58</span></p>
+        <p>Alessandra: <span id="k_gain_ale_big" class="gain-big highlight">R$&nbsp;57.281,56</span></p>
+        <p><strong>Total:</strong> <span id="k_gain_total_big" class="gain-big highlight">R$&nbsp;83.518,14</span></p>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="card" id="decision_card">
+    <h2>Quadro de Decisão</h2>
+    <div class="decision-grid">
+      <div class="decision-item">
+        <h4>Decisão (Geral)</h4>
+        <p>Status: <span id="dec_status" class="badge ok">Vantajoso</span></p>
+        <p>Ganho real total: <span id="dec_gain_total" class="gain-big highlight">R$&nbsp;83.518,14</span></p>
+        <p class="muted">Regra: se <strong>ganho real total</strong> &gt; 0 ⇒ <strong>vantajoso</strong>. Se &lt; 0 ⇒ <strong>não vantajoso</strong>.</p>
+      </div>
+      <div class="decision-item">
+        <h4>Time Ana Lucia</h4>
+        <p>Status: <span id="dec_status_ana" class="badge ok">Vantajoso</span></p>
+        <p>Ganho real: <span id="dec_gain_ana" class="gain-big highlight">R$&nbsp;26.236,58</span></p>
+      </div>
+      <div class="decision-item">
+        <h4>Time Alessandra</h4>
+        <p>Status: <span id="dec_status_ale" class="badge ok">Vantajoso</span></p>
+        <p>Ganho real: <span id="dec_gain_ale" class="gain-big highlight">R$&nbsp;57.281,56</span></p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <h2>Time Ana Lucia</h2>
+    <div class="grid">
+      <div class="kpi">
+        <h3 style="margin:0 0 8px 0;">Inputs (2026) e Bonificação (2025)</h3>
+        <div class="control-row">
+          <label for="ana_share26">Share VGV 2026 (%):</label>
+          <input id="ana_share26" type="text" value="55,00" inputmode="decimal">
+        </div>
+        <div class="control-row">
+          <label for="ana_rate26">Comissão 2026 (%):</label>
+          <input id="ana_rate26" type="text" value="0,25" inputmode="decimal">
+        </div>
+        <div class="control-row">
+          <label for="ana_bonus25">Bonificação 2025 (R$):</label>
+          <input id="ana_bonus25" type="text" value="0" inputmode="decimal">
+        </div>
+        <div class="muted">Bonificação ajusta apenas a coluna <strong>Comissão 2025</strong>.</div>
+      </div>
+
+      <div class="kpi">
+        <h3 style="margin:0 0 8px 0;">Share Médio</h3>
+        <p><strong>Share médio 2025:</strong> <span id="ana_share25_avg">54,36%</span></p>
+        <p><strong>Share 2026 (atual):</strong> <span id="ana_share26_label">54,28%</span></p>
+      </div>
+
+      <div class="kpi">
+        <h3 style="margin:0 0 8px 0;">Comissão – Totais</h3>
+        <p><strong>Comissão 2025 (ajustada):</strong> <span id="ana_comm25_total_adj">R$&nbsp;584.813,00</span></p>
+        <p><strong>Comissão 2026 (calculada):</strong> <span id="ana_comm26_total">R$&nbsp;611.049,58</span></p>
+        <p><strong>Diferença (2026 − 2025 ajustado):</strong> <span id="ana_comm_diff" class="highlight">R$&nbsp;26.236,58</span></p>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr class="subhead">
+          <th colspan="4">2025</th>
+          <th colspan="3">2026 (calculado)</th>
+        </tr>
+        <tr>
+          <th>Mês</th>
+          <th>VGV Geral 2025</th>
+          <th>VGV Time 2025</th>
+          <th>Comissão 2025</th>
+          <th>VGV Geral 2026</th>
+          <th>VGV Time 2026</th>
+          <th>Comissão 2026</th>
+        </tr>
+      </thead>
+      <tbody id="ana_rows">
+      <tr>
+        <td>Jan</td>
+        <td>R$&nbsp;30.020.464,00</td>
+        <td>R$&nbsp;16.589.050,00</td>
+        <td>R$&nbsp;74.651,00</td>
+        <td>R$&nbsp;33.709.205,00</td>
+        <td><span id="ana_rows_vgv26_0">R$&nbsp;18.297.356,47</span></td>
+        <td><span id="ana_rows_comm26_0">R$&nbsp;45.743,39</span></td>
+      </tr>
+    
+      <tr>
+        <td>Fev</td>
+        <td>R$&nbsp;26.221.011,00</td>
+        <td>R$&nbsp;13.437.405,00</td>
+        <td>R$&nbsp;52.920,00</td>
+        <td>R$&nbsp;32.260.426,00</td>
+        <td><span id="ana_rows_vgv26_1">R$&nbsp;17.510.959,23</span></td>
+        <td><span id="ana_rows_comm26_1">R$&nbsp;43.777,40</span></td>
+      </tr>
+    
+      <tr>
+        <td>Mar</td>
+        <td>R$&nbsp;38.156.084,00</td>
+        <td>R$&nbsp;21.247.907,00</td>
+        <td>R$&nbsp;53.120,00</td>
+        <td>R$&nbsp;30.258.318,00</td>
+        <td><span id="ana_rows_vgv26_2">R$&nbsp;16.424.215,01</span></td>
+        <td><span id="ana_rows_comm26_2">R$&nbsp;41.060,54</span></td>
+      </tr>
+    
+      <tr>
+        <td>Abr</td>
+        <td>R$&nbsp;29.497.738,00</td>
+        <td>R$&nbsp;15.496.086,00</td>
+        <td>R$&nbsp;38.740,00</td>
+        <td>R$&nbsp;28.324.562,00</td>
+        <td><span id="ana_rows_vgv26_3">R$&nbsp;15.374.572,25</span></td>
+        <td><span id="ana_rows_comm26_3">R$&nbsp;38.436,43</span></td>
+      </tr>
+    
+      <tr>
+        <td>Mai</td>
+        <td>R$&nbsp;22.203.539,00</td>
+        <td>R$&nbsp;13.154.233,00</td>
+        <td>R$&nbsp;32.886,00</td>
+        <td>R$&nbsp;27.028.119,00</td>
+        <td><span id="ana_rows_vgv26_4">R$&nbsp;14.670.862,99</span></td>
+        <td><span id="ana_rows_comm26_4">R$&nbsp;36.677,16</span></td>
+      </tr>
+    
+      <tr>
+        <td>Jun</td>
+        <td>R$&nbsp;43.918.736,00</td>
+        <td>R$&nbsp;24.837.324,00</td>
+        <td>R$&nbsp;70.771,00</td>
+        <td>R$&nbsp;32.048.119,00</td>
+        <td><span id="ana_rows_vgv26_5">R$&nbsp;17.395.718,99</span></td>
+        <td><span id="ana_rows_comm26_5">R$&nbsp;43.489,30</span></td>
+      </tr>
+    
+      <tr>
+        <td>Jul</td>
+        <td>R$&nbsp;35.052.667,00</td>
+        <td>R$&nbsp;20.971.025,00</td>
+        <td>R$&nbsp;57.427,00</td>
+        <td>R$&nbsp;35.654.023,00</td>
+        <td><span id="ana_rows_vgv26_6">R$&nbsp;19.353.003,68</span></td>
+        <td><span id="ana_rows_comm26_6">R$&nbsp;48.382,51</span></td>
+      </tr>
+    
+      <tr>
+        <td>Ago</td>
+        <td>R$&nbsp;30.680.246,00</td>
+        <td>R$&nbsp;17.305.595,00</td>
+        <td>R$&nbsp;43.264,00</td>
+        <td>R$&nbsp;40.460.920,00</td>
+        <td><span id="ana_rows_vgv26_7">R$&nbsp;21.962.187,38</span></td>
+        <td><span id="ana_rows_comm26_7">R$&nbsp;54.905,47</span></td>
+      </tr>
+    
+      <tr>
+        <td>Set</td>
+        <td>R$&nbsp;35.077.289,00</td>
+        <td>R$&nbsp;18.789.742,00</td>
+        <td>R$&nbsp;46.974,00</td>
+        <td>R$&nbsp;46.574.610,00</td>
+        <td><span id="ana_rows_vgv26_8">R$&nbsp;25.280.698,31</span></td>
+        <td><span id="ana_rows_comm26_8">R$&nbsp;63.201,75</span></td>
+      </tr>
+    
+      <tr>
+        <td>Out</td>
+        <td>R$&nbsp;34.341.267,00</td>
+        <td>R$&nbsp;17.248.711,00</td>
+        <td>R$&nbsp;43.817,00</td>
+        <td>R$&nbsp;45.319.610,00</td>
+        <td><span id="ana_rows_vgv26_9">R$&nbsp;24.599.484,31</span></td>
+        <td><span id="ana_rows_comm26_9">R$&nbsp;61.498,71</span></td>
+      </tr>
+    
+      <tr>
+        <td>Nov</td>
+        <td>R$&nbsp;32.761.125,00</td>
+        <td>R$&nbsp;17.094.115,00</td>
+        <td>R$&nbsp;42.735,00</td>
+        <td>R$&nbsp;50.343.610,00</td>
+        <td><span id="ana_rows_vgv26_10">R$&nbsp;27.326.511,51</span></td>
+        <td><span id="ana_rows_comm26_10">R$&nbsp;68.316,28</span></td>
+      </tr>
+    
+      <tr>
+        <td>Dez</td>
+        <td>R$&nbsp;22.181.628,00</td>
+        <td>R$&nbsp;11.003.019,00</td>
+        <td>R$&nbsp;27.508,00</td>
+        <td>R$&nbsp;48.312.933,00</td>
+        <td><span id="ana_rows_vgv26_11">R$&nbsp;26.224.260,03</span></td>
+        <td><span id="ana_rows_comm26_11">R$&nbsp;65.560,65</span></td>
+      </tr>
+    </tbody>
+      <tbody>
+        <tr class="row-bonus">
+          <td>Bonificação</td><td>—</td><td>—</td>
+          <td><input id="ana_bonus25_row" type="text" value="0" inputmode="decimal" style="width:160px; padding:6px 10px; border:1px solid #d0d7de; border-radius:10px; text-align:right;"></td>
+          <td>—</td><td>—</td><td>—</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr style="font-weight:bold; background-color:#ecf0f1;">
+          <td>Total</td>
+          <td id="ana_t_vgv25_total">R$&nbsp;380.111.794,00</td><td id="ana_t_vgv25_team">R$&nbsp;207.174.212,00</td><td id="ana_t_comm25_adj">R$&nbsp;584.813,00</td>
+          <td id="ana_t_vgv26_total">R$&nbsp;450.294.455,00</td><td id="ana_t_vgv26_team">R$&nbsp;244.419.830,17</td><td id="ana_t_comm26">R$&nbsp;611.049,58</td>
+        </tr>
+        <tr style="font-weight:bold; background-color:#f6f7f9;">
+          <td>Média</td>
+          <td id="ana_a_vgv25_total">R$&nbsp;31.675.982,83</td><td id="ana_a_vgv25_team">R$&nbsp;17.264.517,67</td><td id="ana_a_comm25_adj">R$&nbsp;48.734,42</td>
+          <td id="ana_a_vgv26_total">R$&nbsp;37.524.537,92</td><td id="ana_a_vgv26_team">R$&nbsp;20.368.319,18</td><td id="ana_a_comm26">R$&nbsp;50.920,80</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Time Alessandra</h2>
+    <div class="grid">
+      <div class="kpi">
+        <h3 style="margin:0 0 8px 0;">Inputs (2026) e Bonificação (2025)</h3>
+        <div class="control-row">
+          <label for="ale_share26">Share VGV 2026 (%):</label>
+          <input id="ale_share26" type="text" value="—" inputmode="decimal" readonly="">
+        </div>
+        <div class="control-row">
+          <label for="ale_rate26">Comissão 2026 (%):</label>
+          <input id="ale_rate26" type="text" value="0,25" inputmode="decimal">
+        </div>
+        <div class="control-row">
+          <label for="ale_bonus25">Bonificação 2025 (R$):</label>
+          <input id="ale_bonus25" type="text" value="0" inputmode="decimal">
+        </div>
+        <div class="muted">O Share 2026 aqui é <strong>automático</strong> (100% − Share Ana).</div>
+      </div>
+
+      <div class="kpi">
+        <h3 style="margin:0 0 8px 0;">Share Médio</h3>
+        <p><strong>Share médio 2025:</strong> <span id="ale_share25_avg">42,67%</span></p>
+        <p><strong>Share 2026 (atual):</strong> <span id="ale_share26_label">45,72%</span></p>
+      </div>
+
+      <div class="kpi">
+        <h3 style="margin:0 0 8px 0;">Comissão – Totais</h3>
+        <p><strong>Comissão 2025 (ajustada):</strong> <span id="ale_comm25_total_adj">R$&nbsp;457.405,00</span></p>
+        <p><strong>Comissão 2026 (calculada):</strong> <span id="ale_comm26_total">R$&nbsp;514.686,56</span></p>
+        <p><strong>Diferença (2026 − 2025 ajustado):</strong> <span id="ale_comm_diff" class="highlight">R$&nbsp;57.281,56</span></p>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr class="subhead">
+          <th colspan="4">2025</th>
+          <th colspan="3">2026 (calculado)</th>
+        </tr>
+        <tr>
+          <th>Mês</th>
+          <th>VGV Geral 2025</th>
+          <th>VGV Time 2025</th>
+          <th>Comissão 2025</th>
+          <th>VGV Geral 2026</th>
+          <th>VGV Time 2026</th>
+          <th>Comissão 2026</th>
+        </tr>
+      </thead>
+      <tbody id="ale_rows">
+      <tr>
+        <td>Jan</td>
+        <td>R$&nbsp;30.020.464,00</td>
+        <td>R$&nbsp;10.170.040,00</td>
+        <td>R$&nbsp;45.765,00</td>
+        <td>R$&nbsp;33.709.205,00</td>
+        <td><span id="ale_rows_vgv26_0">R$&nbsp;15.411.848,53</span></td>
+        <td><span id="ale_rows_comm26_0">R$&nbsp;38.529,62</span></td>
+      </tr>
+    
+      <tr>
+        <td>Fev</td>
+        <td>R$&nbsp;26.221.011,00</td>
+        <td>R$&nbsp;11.918.514,00</td>
+        <td>R$&nbsp;44.324,00</td>
+        <td>R$&nbsp;32.260.426,00</td>
+        <td><span id="ale_rows_vgv26_1">R$&nbsp;14.749.466,77</span></td>
+        <td><span id="ale_rows_comm26_1">R$&nbsp;36.873,67</span></td>
+      </tr>
+    
+      <tr>
+        <td>Mar</td>
+        <td>R$&nbsp;38.156.084,00</td>
+        <td>R$&nbsp;13.980.217,00</td>
+        <td>R$&nbsp;34.951,00</td>
+        <td>R$&nbsp;30.258.318,00</td>
+        <td><span id="ale_rows_vgv26_2">R$&nbsp;13.834.102,99</span></td>
+        <td><span id="ale_rows_comm26_2">R$&nbsp;34.585,26</span></td>
+      </tr>
+    
+      <tr>
+        <td>Abr</td>
+        <td>R$&nbsp;29.497.738,00</td>
+        <td>R$&nbsp;12.716.340,00</td>
+        <td>R$&nbsp;31.791,00</td>
+        <td>R$&nbsp;28.324.562,00</td>
+        <td><span id="ale_rows_vgv26_3">R$&nbsp;12.949.989,75</span></td>
+        <td><span id="ale_rows_comm26_3">R$&nbsp;32.374,97</span></td>
+      </tr>
+    
+      <tr>
+        <td>Mai</td>
+        <td>R$&nbsp;22.203.539,00</td>
+        <td>R$&nbsp;9.049.306,00</td>
+        <td>R$&nbsp;22.623,00</td>
+        <td>R$&nbsp;27.028.119,00</td>
+        <td><span id="ale_rows_vgv26_4">R$&nbsp;12.357.256,01</span></td>
+        <td><span id="ale_rows_comm26_4">R$&nbsp;30.893,14</span></td>
+      </tr>
+    
+      <tr>
+        <td>Jun</td>
+        <td>R$&nbsp;43.918.736,00</td>
+        <td>R$&nbsp;18.352.397,00</td>
+        <td>R$&nbsp;51.787,00</td>
+        <td>R$&nbsp;32.048.119,00</td>
+        <td><span id="ale_rows_vgv26_5">R$&nbsp;14.652.400,01</span></td>
+        <td><span id="ale_rows_comm26_5">R$&nbsp;36.631,00</span></td>
+      </tr>
+    
+      <tr>
+        <td>Jul</td>
+        <td>R$&nbsp;35.052.667,00</td>
+        <td>R$&nbsp;13.088.520,00</td>
+        <td>R$&nbsp;34.540,00</td>
+        <td>R$&nbsp;35.654.023,00</td>
+        <td><span id="ale_rows_vgv26_6">R$&nbsp;16.301.019,32</span></td>
+        <td><span id="ale_rows_comm26_6">R$&nbsp;40.752,55</span></td>
+      </tr>
+    
+      <tr>
+        <td>Ago</td>
+        <td>R$&nbsp;30.680.246,00</td>
+        <td>R$&nbsp;13.006.818,00</td>
+        <td>R$&nbsp;37.262,00</td>
+        <td>R$&nbsp;40.460.920,00</td>
+        <td><span id="ale_rows_vgv26_7">R$&nbsp;18.498.732,62</span></td>
+        <td><span id="ale_rows_comm26_7">R$&nbsp;46.246,83</span></td>
+      </tr>
+    
+      <tr>
+        <td>Set</td>
+        <td>R$&nbsp;35.077.289,00</td>
+        <td>R$&nbsp;15.878.087,00</td>
+        <td>R$&nbsp;44.874,00</td>
+        <td>R$&nbsp;46.574.610,00</td>
+        <td><span id="ale_rows_vgv26_8">R$&nbsp;21.293.911,69</span></td>
+        <td><span id="ale_rows_comm26_8">R$&nbsp;53.234,78</span></td>
+      </tr>
+    
+      <tr>
+        <td>Out</td>
+        <td>R$&nbsp;34.341.267,00</td>
+        <td>R$&nbsp;16.528.674,00</td>
+        <td>R$&nbsp;42.473,00</td>
+        <td>R$&nbsp;45.319.610,00</td>
+        <td><span id="ale_rows_vgv26_9">R$&nbsp;20.720.125,69</span></td>
+        <td><span id="ale_rows_comm26_9">R$&nbsp;51.800,31</span></td>
+      </tr>
+    
+      <tr>
+        <td>Nov</td>
+        <td>R$&nbsp;32.761.125,00</td>
+        <td>R$&nbsp;15.667.011,00</td>
+        <td>R$&nbsp;39.591,00</td>
+        <td>R$&nbsp;50.343.610,00</td>
+        <td><span id="ale_rows_vgv26_10">R$&nbsp;23.017.098,49</span></td>
+        <td><span id="ale_rows_comm26_10">R$&nbsp;57.542,75</span></td>
+      </tr>
+    
+      <tr>
+        <td>Dez</td>
+        <td>R$&nbsp;22.181.628,00</td>
+        <td>R$&nbsp;10.969.708,00</td>
+        <td>R$&nbsp;27.424,00</td>
+        <td>R$&nbsp;48.312.933,00</td>
+        <td><span id="ale_rows_vgv26_11">R$&nbsp;22.088.672,97</span></td>
+        <td><span id="ale_rows_comm26_11">R$&nbsp;55.221,68</span></td>
+      </tr>
+    </tbody>
+      <tbody>
+        <tr class="row-bonus">
+          <td>Bonificação</td><td>—</td><td>—</td>
+          <td><input id="ale_bonus25_row" type="text" value="0" inputmode="decimal" style="width:160px; padding:6px 10px; border:1px solid #d0d7de; border-radius:10px; text-align:right;"></td>
+          <td>—</td><td>—</td><td>—</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr style="font-weight:bold; background-color:#ecf0f1;">
+          <td>Total</td>
+          <td id="ale_t_vgv25_total">R$&nbsp;380.111.794,00</td><td id="ale_t_vgv25_team">R$&nbsp;161.325.632,00</td><td id="ale_t_comm25_adj">R$&nbsp;457.405,00</td>
+          <td id="ale_t_vgv26_total">R$&nbsp;450.294.455,00</td><td id="ale_t_vgv26_team">R$&nbsp;205.874.624,83</td><td id="ale_t_comm26">R$&nbsp;514.686,56</td>
+        </tr>
+        <tr style="font-weight:bold; background-color:#f6f7f9;">
+          <td>Média</td>
+          <td id="ale_a_vgv25_total">R$&nbsp;31.675.982,83</td><td id="ale_a_vgv25_team">R$&nbsp;13.443.802,67</td><td id="ale_a_comm25_adj">R$&nbsp;38.117,08</td>
+          <td id="ale_a_vgv26_total">R$&nbsp;37.524.537,92</td><td id="ale_a_vgv26_team">R$&nbsp;17.156.218,74</td><td id="ale_a_comm26">R$&nbsp;42.890,55</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  const months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+  const vgv25Total = [30020464, 26221011, 38156084, 29497738, 22203539, 43918736, 35052667, 30680246, 35077289, 34341267, 32761125, 22181628];
+  const vgv26Total = [33709205, 32260426, 30258318, 28324562, 27028119, 32048119, 35654023, 40460920, 46574610, 45319610, 50343610, 48312933];
+
+  const ana25Vgv = [16589050, 13437405, 21247907, 15496086, 13154233, 24837324, 20971025, 17305595, 18789742, 17248711, 17094115, 11003019];
+  const ana25Comm = [74651, 52920, 53120, 38740, 32886, 70771, 57427, 43264, 46974, 43817, 42735, 27508];
+  const ana25Share = [55.26, 51.25, 55.69, 52.53, 59.24, 56.55, 59.83, 56.41, 53.57, 50.23, 52.18, 49.6];
+
+  const ale25Vgv = [10170040, 11918514, 13980217, 12716340, 9049306, 18352397, 13088520, 13006818, 15878087, 16528674, 15667011, 10969708];
+  const ale25Comm = [45765, 44324, 34951, 31791, 22623, 51787, 34540, 37262, 44874, 42473, 39591, 27424];
+  const ale25Share = [33.88, 45.45, 36.64, 43.11, 40.76, 41.79, 37.34, 42.39, 45.27, 48.13, 47.82, 49.45];
+
+  function sum(arr){ return arr.reduce((a,b)=>a+b,0); }
+  function toBRL(v){ return (v||0).toLocaleString('pt-BR',{ style:'currency', currency:'BRL' }); }
+  function toPct(v){ return (v||0).toLocaleString('pt-BR',{ minimumFractionDigits:2, maximumFractionDigits:2 }) + '%'; }
+
+  function parsePtNumber(raw){
+    if(raw == null) return 0;
+    const s0 = String(raw).trim().replace('R$','').replace('%','').replace(/\s/g,'');
+    const noThousands = s0.replace(/\.(?=\d{3}(\D|$))/g,'');
+    const normalized = noThousands.replace(',','.');
+    const n = parseFloat(normalized);
+    return isNaN(n) ? 0 : n;
+  }
+
+  function setText(id, text){
+    const el = document.getElementById(id);
+    if(el) el.textContent = text;
+  }
+  function setDiffClass(el, diff){
+    if(!el) return;
+    el.classList.remove('highlight','negative');
+    el.classList.add(diff >= 0 ? 'highlight' : 'negative');
+  }
+
+  const tVgv25 = sum(vgv25Total);
+  const tVgv26 = sum(vgv26Total);
+  setText('k_vgv25_total', toBRL(tVgv25));
+  setText('k_vgv25_avg', toBRL(tVgv25/12));
+  setText('k_vgv26_total', toBRL(tVgv26));
+  setText('k_vgv26_avg', toBRL(tVgv26/12));
+  const growth = tVgv26 - tVgv25;
+  const growthPct = tVgv25 === 0 ? 0 : (growth/tVgv25)*100;
+  setText('k_vgv_growth', `${toBRL(growth)} (${growthPct.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}%)`);
+
+  setText('ana_share25_avg', toPct(sum(ana25Share)/12));
+  setText('ale_share25_avg', toPct(sum(ale25Share)/12));
+
+  function renderBaseRows(tbodyId, team25Vgv, team25Comm){
+    const tbody = document.getElementById(tbodyId);
+    tbody.innerHTML = months.map((m,i)=>`
+      <tr>
+        <td>${m}</td>
+        <td>${toBRL(vgv25Total[i])}</td>
+        <td>${toBRL(team25Vgv[i])}</td>
+        <td>${toBRL(team25Comm[i])}</td>
+        <td>${toBRL(vgv26Total[i])}</td>
+        <td><span id="${tbodyId}_vgv26_${i}">—</span></td>
+        <td><span id="${tbodyId}_comm26_${i}">—</span></td>
+      </tr>
+    `).join('');
+  }
+  renderBaseRows('ana_rows', ana25Vgv, ana25Comm);
+  renderBaseRows('ale_rows', ale25Vgv, ale25Comm);
+
+  function bindBonus(topId, rowId, onChange){
+    const top = document.getElementById(topId);
+    const row = document.getElementById(rowId);
+    function sync(from, to){ to.value = from.value; }
+    top.addEventListener('input', ()=>{ sync(top,row); onChange(); });
+    row.addEventListener('input', ()=>{ sync(row,top); onChange(); });
+  }
+
+  function fillFoot(prefix, vgv25TeamArr, comm25Arr, bonus, vgv26TeamArr, comm26Arr){
+    const comm25AdjTotal = sum(comm25Arr) + bonus;
+
+    setText(prefix+'_t_vgv25_total', toBRL(tVgv25));
+    setText(prefix+'_a_vgv25_total', toBRL(tVgv25/12));
+    setText(prefix+'_t_vgv25_team', toBRL(sum(vgv25TeamArr)));
+    setText(prefix+'_a_vgv25_team', toBRL(sum(vgv25TeamArr)/12));
+    setText(prefix+'_t_comm25_adj', toBRL(comm25AdjTotal));
+    setText(prefix+'_a_comm25_adj', toBRL(comm25AdjTotal/12));
+
+    const tTeamVgv26 = sum(vgv26TeamArr);
+    const tComm26 = sum(comm26Arr);
+
+    setText(prefix+'_t_vgv26_total', toBRL(tVgv26));
+    setText(prefix+'_a_vgv26_total', toBRL(tVgv26/12));
+    setText(prefix+'_t_vgv26_team', toBRL(tTeamVgv26));
+    setText(prefix+'_a_vgv26_team', toBRL(tTeamVgv26/12));
+    setText(prefix+'_t_comm26', toBRL(tComm26));
+    setText(prefix+'_a_comm26', toBRL(tComm26/12));
+
+    return {comm25AdjTotal, tComm26};
+  }
+
+  function recalcAll(){
+    let anaSharePct = parsePtNumber(document.getElementById('ana_share26').value);
+    if (anaSharePct < 0) anaSharePct = 0;
+    if (anaSharePct > 100) anaSharePct = 100;
+    const aleSharePct = 100 - anaSharePct;
+
+    document.getElementById('ale_share26').value = aleSharePct.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+    setText('ana_share26_label', toPct(anaSharePct));
+    setText('ale_share26_label', toPct(aleSharePct));
+
+    const anaRatePct = parsePtNumber(document.getElementById('ana_rate26').value);
+    const aleRatePct = parsePtNumber(document.getElementById('ale_rate26').value);
+    const anaRate = anaRatePct/100;
+    const aleRate = aleRatePct/100;
+
+    const anaBonus = parsePtNumber(document.getElementById('ana_bonus25').value);
+    const aleBonus = parsePtNumber(document.getElementById('ale_bonus25').value);
+
+    const anaShare = anaSharePct/100;
+    const aleShare = aleSharePct/100;
+
+    const anaVgv26 = vgv26Total.map(v=>v*anaShare);
+    const anaComm26 = anaVgv26.map(v=>v*anaRate);
+
+    const aleVgv26 = vgv26Total.map(v=>v*aleShare);
+    const aleComm26 = aleVgv26.map(v=>v*aleRate);
+
+    for(let i=0;i<12;i++){
+      document.getElementById(`ana_rows_vgv26_${i}`).textContent = toBRL(anaVgv26[i]);
+      document.getElementById(`ana_rows_comm26_${i}`).textContent = toBRL(anaComm26[i]);
+      document.getElementById(`ale_rows_vgv26_${i}`).textContent = toBRL(aleVgv26[i]);
+      document.getElementById(`ale_rows_comm26_${i}`).textContent = toBRL(aleComm26[i]);
+    }
+
+    const anaFoot = fillFoot('ana', ana25Vgv, ana25Comm, anaBonus, anaVgv26, anaComm26);
+    const aleFoot = fillFoot('ale', ale25Vgv, ale25Comm, aleBonus, aleVgv26, aleComm26);
+
+    setText('ana_comm25_total_adj', toBRL(anaFoot.comm25AdjTotal));
+    setText('ana_comm26_total', toBRL(anaFoot.tComm26));
+    const anaDiff = anaFoot.tComm26 - anaFoot.comm25AdjTotal;
+    const anaDiffEl = document.getElementById('ana_comm_diff');
+    anaDiffEl.textContent = toBRL(anaDiff);
+    setDiffClass(anaDiffEl, anaDiff);
+
+    setText('ale_comm25_total_adj', toBRL(aleFoot.comm25AdjTotal));
+    setText('ale_comm26_total', toBRL(aleFoot.tComm26));
+    const aleDiff = aleFoot.tComm26 - aleFoot.comm25AdjTotal;
+    const aleDiffEl = document.getElementById('ale_comm_diff');
+    aleDiffEl.textContent = toBRL(aleDiff);
+    setDiffClass(aleDiffEl, aleDiff);
+    // Médias mensais de comissão por time (2025 ajustado e 2026 calculado)
+    const comm25AvgAna = anaFoot.comm25AdjTotal / 12;
+    const comm25AvgAle = aleFoot.comm25AdjTotal / 12;
+    const comm26AvgAna = anaFoot.tComm26 / 12;
+    const comm26AvgAle = aleFoot.tComm26 / 12;
+
+    setText('k_comm25_avg_ana', toBRL(comm25AvgAna));
+    setText('k_comm25_avg_ale', toBRL(comm25AvgAle));
+    setText('k_comm26_avg_ana', toBRL(comm26AvgAna));
+    setText('k_comm26_avg_ale', toBRL(comm26AvgAle));
+
+    // Médias mensais de VGV por time (2025 fixo e 2026 calculado)
+    const vgv25AvgAna = sum(ana25Vgv) / 12;
+    const vgv25AvgAle = sum(ale25Vgv) / 12;
+    const vgv26AvgAna = sum(anaVgv26) / 12;
+    const vgv26AvgAle = sum(aleVgv26) / 12;
+
+    setText('k_vgv25_avg_ana', toBRL(vgv25AvgAna));
+    setText('k_vgv25_avg_ale', toBRL(vgv25AvgAle));
+    setText('k_vgv26_avg_ana', toBRL(vgv26AvgAna));
+    setText('k_vgv26_avg_ale', toBRL(vgv26AvgAle));
+
+    // Ganho real de comissão (2026 − 2025 ajustado)
+    const gainAna = anaFoot.tComm26 - anaFoot.comm25AdjTotal;
+    const gainAle = aleFoot.tComm26 - aleFoot.comm25AdjTotal;
+    const gainTotal = gainAna + gainAle;
+
+    setText('k_gain_ana_big', toBRL(gainAna));
+    setText('k_gain_ale_big', toBRL(gainAle));
+    setText('k_gain_total_big', toBRL(gainTotal));
+// Destaque do ganho real (cores) e quadro de decisão
+    function setBadge(id, diff){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.classList.remove('ok','bad','neutral');
+      if(diff > 0) { el.classList.add('ok'); el.textContent = 'Vantajoso'; }
+      else if(diff < 0) { el.classList.add('bad'); el.textContent = 'Não vantajoso'; }
+      else { el.classList.add('neutral'); el.textContent = 'Neutro'; }
+    }
+    function setGainHighlight(spanId, diff){
+      const el = document.getElementById(spanId);
+      if(!el) return;
+      el.classList.remove('highlight','negative');
+      el.classList.add(diff >= 0 ? 'highlight' : 'negative');
+    }
+
+    setGainHighlight('k_gain_ana_big', gainAna);
+    setGainHighlight('k_gain_ale_big', gainAle);
+    setGainHighlight('k_gain_total_big', gainTotal);
+
+    // Preenche quadro de decisão
+    setText('dec_gain_total', toBRL(gainTotal));
+    setText('dec_gain_ana', toBRL(gainAna));
+    setText('dec_gain_ale', toBRL(gainAle));
+
+    setBadge('dec_status', gainTotal);
+    setBadge('dec_status_ana', gainAna);
+    setBadge('dec_status_ale', gainAle);
+
+    setGainHighlight('dec_gain_total', gainTotal);
+    setGainHighlight('dec_gain_ana', gainAna);
+    setGainHighlight('dec_gain_ale', gainAle);
+}
+
+  document.getElementById('ana_share26').addEventListener('input', recalcAll);
+  document.getElementById('ana_rate26').addEventListener('input', recalcAll);
+  document.getElementById('ale_rate26').addEventListener('input', recalcAll);
+
+  document.getElementById('ana_bonus25').addEventListener('input', recalcAll);
+  document.getElementById('ale_bonus25').addEventListener('input', recalcAll);
+
+  bindBonus('ana_bonus25', 'ana_bonus25_row', recalcAll);
+  bindBonus('ale_bonus25', 'ale_bonus25_row', recalcAll);
+
+  recalcAll();
+})();
+</script>
+
+
+</div></body></html>
